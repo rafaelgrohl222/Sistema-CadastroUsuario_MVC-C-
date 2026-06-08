@@ -1,0 +1,6 @@
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Entidades\bin\Debug\Sistema.Entidades.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Entidades\bin\Debug\Sistema.Entidades.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.AssemblyReference.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.CoreCompileInputs.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.pdb

@@ -1,0 +1,16 @@
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.View.exe.config
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.View.exe
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.View.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.csproj.AssemblyReference.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.Properties.Resources.resources
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.csproj.GenerateResource.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.csproj.CoreCompileInputs.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.exe
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.Entidades.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.Model.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.Entidades.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.Model.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.frm_CadUsuario.resources
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.frm_Login.resources
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.csproj.CopyComplete

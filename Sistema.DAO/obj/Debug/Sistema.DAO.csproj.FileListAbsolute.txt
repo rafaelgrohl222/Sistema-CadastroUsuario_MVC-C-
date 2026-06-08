@@ -1,0 +1,9 @@
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\bin\Debug\Sistema.DAO.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\bin\Debug\Sistema.DAO.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\bin\Debug\Sistema.Entidades.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\bin\Debug\Sistema.Entidades.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.csproj.AssemblyReference.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.csproj.CoreCompileInputs.cache
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.csproj.CopyComplete
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.pdb
