@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema.Model;
+using Sistema.Entidades;
 
 namespace Sistema.View
 {
     public partial class frm_CadUsuario : Form
     {
+        UsuarioEnt objTabela = new UsuarioEnt();
+
         public frm_CadUsuario()
         {
             InitializeComponent();
@@ -35,6 +39,19 @@ namespace Sistema.View
                     break;
 
                 case "Salvar":
+                    try
+                    {
+                        objTabela.Nome = txt_Nome.Text;
+                        objTabela.Usuario = txt_Usuario.Text;
+                        objTabela.Senha = txt_Senha.Text;
+                        //Passando dados dos TexBox para o 
+                        int x = UsuarioModel.Inserir(objTabela);//Parei aula 17: 00min
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um Error ao Salvar!");
+                        throw;
+                    }
                     break;
 
                 case "Excluir":
