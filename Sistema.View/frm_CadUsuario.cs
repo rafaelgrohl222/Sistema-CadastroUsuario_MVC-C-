@@ -21,14 +21,15 @@ namespace Sistema.View
             InitializeComponent();
         }
 
+        //Botão Novo
         private void btn_Novo_Click(object sender, EventArgs e)
         {
             opc = "Novo";//Recebe o valor "Novo"
             iniciarOpc();
         }
 
+        //Método: Opções (Novo, Salvar, Excluir, Editar ou vazio)
         private string opc = "";
-        //Método: Opções (Novo ou vazio)
         private void iniciarOpc()
         {
             switch (opc)
@@ -45,7 +46,7 @@ namespace Sistema.View
                         objTabela.Usuario = txt_Usuario.Text;
                         objTabela.Senha = txt_Senha.Text;
                         //Passando dados dos TexBox para o 
-                        int x = UsuarioModel.Inserir(objTabela);//Parei aula 17: 00min
+                        int x = UsuarioModel.Inserir(objTabela);
                     }
                     catch (Exception ex)
                     {
