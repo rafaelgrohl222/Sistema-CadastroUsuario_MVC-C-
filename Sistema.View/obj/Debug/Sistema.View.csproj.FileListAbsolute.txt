@@ -14,3 +14,6 @@ D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\S
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.frm_CadUsuario.resources
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.frm_Login.resources
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.csproj.CopyComplete
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.DAO.dll
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.DAO.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.DAO.dll.config

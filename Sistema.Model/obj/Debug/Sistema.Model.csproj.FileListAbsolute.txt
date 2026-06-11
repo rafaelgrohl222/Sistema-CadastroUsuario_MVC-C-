@@ -9,3 +9,4 @@ D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Model\obj\Debug\
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Model\obj\Debug\Sistema.Model.csproj.CopyComplete
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Model\obj\Debug\Sistema.Model.dll
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Model\obj\Debug\Sistema.Model.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.Model\bin\Debug\Sistema.DAO.dll.config

@@ -7,3 +7,4 @@ D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Si
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.csproj.CopyComplete
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.dll
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\obj\Debug\Sistema.DAO.pdb
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.DAO\bin\Debug\Sistema.DAO.dll.config

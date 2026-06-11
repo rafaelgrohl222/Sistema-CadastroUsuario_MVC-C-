@@ -45,13 +45,21 @@ namespace Sistema.View
                         objTabela.Nome = txt_Nome.Text;
                         objTabela.Usuario = txt_Usuario.Text;
                         objTabela.Senha = txt_Senha.Text;
-                        //Passando dados dos TexBox para o 
+
+                        //Passando dados dos TexBox para o BD
                         int x = UsuarioModel.Inserir(objTabela);
+                        if(x > 0) 
+                        {
+                            MessageBox.Show(string.Format("Usuário ({0}) Foi Inserido!", txt_Nome.Text));
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Não Inserido!");
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ocorreu um Error ao Salvar!");
-                        throw;
+                        MessageBox.Show("Ocorreu um Error ao Salvar! " + ex.Message);
                     }
                     break;
 
