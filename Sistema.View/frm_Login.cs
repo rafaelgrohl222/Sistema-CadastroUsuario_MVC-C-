@@ -21,8 +21,43 @@ namespace Sistema.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtUsuario.Text == "")
+                {
+                    MessageBox.Show("Preencher campo Usuário!");
+                    txtUsuario.Focus();
+                    return;
+                }
+
+                if (txtSenha.Text == "")
+                {
+                    MessageBox.Show("Preencher campo Senha!");
+                    txtSenha.Focus();
+                    return;
+                }
+
+                UsuarioEnt obj = new UsuarioEnt();
+                obj.Usuario = txtUsuario.Text;
+                obj.Senha = txtSenha.Text;
+
+                obj = new UsuarioModel().Login(obj);
+
+                if (obj.Usuario == null)
+                {
+                    lblMensagem.Text = "Usuário não encontrado!";
+                    lblMensagem.ForeColor = Color.Red;
+                    return;//Segue as fluxo fora do catch
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Logar!" + ex.Message);
+            }
+
             frm_CadUsuario form = new frm_CadUsuario();
-            form.Show();
+            this.Hide();//Ocutar frm_Login
+            form.Show();//Abrir form frm_CadUsuario
         }
     }
 }

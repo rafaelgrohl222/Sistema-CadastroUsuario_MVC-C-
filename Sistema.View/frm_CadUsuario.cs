@@ -104,6 +104,7 @@ namespace Sistema.View
             iniciarOpc();
             ListarGrid();
             DesabilitarCampo();//Parei na aula 29 00:00min
+            LimparCampos();
         }
 
         private void btn_Excluir_Click(object sender, EventArgs e)

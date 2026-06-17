@@ -37,6 +37,51 @@ namespace Sistema.DAO
             }
         }
 
+        public UsuarioEnt Login(UsuarioEnt obj)
+        {
+            using (SqlConnection con = new SqlConnection())//Conexão 
+            {
+                //Associado ao BD
+                con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;//Comando SQL
+
+                con.Open();//Inicializar o conexão BD
+
+                //(comandos p/ inserir)  Selecionar toda tabela where=onde parâmetros
+                cn.CommandText = "SELECT * from tbl_usuarios where usuario = @usuario AND senha = @senha";
+
+                cn.Connection = con;//Associando SqlCommand a conexão
+
+                cn.Parameters.Add("usuario", SqlDbType.VarChar).Value = obj.Usuario;
+                cn.Parameters.Add("senha", SqlDbType.VarChar).Value = obj.Senha;
+
+                SqlDataReader dr;//Realizar consultas
+
+                //verificar quantos linhas recebeu da lista
+                dr = cn.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    //Faça a leitura dentro do data Read, e mostrar
+                    while (dr.Read())
+                    {
+                        UsuarioEnt dado = new UsuarioEnt();
+                        
+                        dado.Usuario = Convert.ToString(dr["usuario"]);
+                        dado.Senha = Convert.ToString(dr["senha"]);
+                    }
+                }
+                else
+                {
+                    //Se não encontrar dados, continua nulo
+                    obj.Usuario = null;
+                    obj.Senha = null;
+                }
+                return obj;
+            }
+        }
+
         public List<UsuarioEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())//Conexão 
