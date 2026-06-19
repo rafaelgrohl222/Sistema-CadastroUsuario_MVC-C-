@@ -46,6 +46,8 @@ namespace Sistema.View
             this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_fechar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_Codigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@ namespace Sistema.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 41);
+            this.label1.Location = new System.Drawing.Point(40, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 0;
@@ -64,7 +66,7 @@ namespace Sistema.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 80);
+            this.label2.Location = new System.Drawing.Point(40, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 1;
@@ -74,7 +76,7 @@ namespace Sistema.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 124);
+            this.label3.Location = new System.Drawing.Point(40, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 2;
@@ -84,7 +86,7 @@ namespace Sistema.View
             // 
             this.txt_Nome.Enabled = false;
             this.txt_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Nome.Location = new System.Drawing.Point(116, 40);
+            this.txt_Nome.Location = new System.Drawing.Point(112, 72);
             this.txt_Nome.Name = "txt_Nome";
             this.txt_Nome.Size = new System.Drawing.Size(180, 22);
             this.txt_Nome.TabIndex = 3;
@@ -93,7 +95,7 @@ namespace Sistema.View
             // 
             this.txt_Usuario.Enabled = false;
             this.txt_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Usuario.Location = new System.Drawing.Point(116, 80);
+            this.txt_Usuario.Location = new System.Drawing.Point(112, 108);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(180, 22);
             this.txt_Usuario.TabIndex = 4;
@@ -102,7 +104,7 @@ namespace Sistema.View
             // 
             this.txt_Senha.Enabled = false;
             this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Senha.Location = new System.Drawing.Point(116, 124);
+            this.txt_Senha.Location = new System.Drawing.Point(112, 141);
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.Size = new System.Drawing.Size(180, 22);
             this.txt_Senha.TabIndex = 5;
@@ -167,6 +169,7 @@ namespace Sistema.View
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(563, 169);
             this.grid.TabIndex = 10;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // id
             // 
@@ -203,7 +206,7 @@ namespace Sistema.View
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sistema.View.Properties.Resources.logim_imagem;
-            this.pictureBox1.Location = new System.Drawing.Point(312, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(312, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 145);
             this.pictureBox1.TabIndex = 11;
@@ -220,11 +223,32 @@ namespace Sistema.View
             this.btn_fechar.UseVisualStyleBackColor = true;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Código:";
+            // 
+            // txt_Codigo
+            // 
+            this.txt_Codigo.Enabled = false;
+            this.txt_Codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Codigo.Location = new System.Drawing.Point(73, 39);
+            this.txt_Codigo.Name = "txt_Codigo";
+            this.txt_Codigo.Size = new System.Drawing.Size(66, 22);
+            this.txt_Codigo.TabIndex = 14;
+            // 
             // frm_CadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 394);
+            this.Controls.Add(this.txt_Codigo);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grid);
@@ -239,6 +263,7 @@ namespace Sistema.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frm_CadUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuário";
             this.Load += new System.EventHandler(this.frm_CadUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
@@ -267,5 +292,7 @@ namespace Sistema.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_Codigo;
     }
 }

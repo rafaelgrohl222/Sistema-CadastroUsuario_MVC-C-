@@ -37,6 +37,57 @@ namespace Sistema.DAO
             }
         }
 
+        public int Editar(UsuarioEnt objTabela)
+        {
+            using (SqlConnection con = new SqlConnection())//Conexão 
+            {
+                //Associado ao BD
+                con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;//Comando SQL
+
+                con.Open();//Inicializar o conexão BD
+
+                //(comandos p/ inserir)       UPDATE tabela campos where receber 
+                cn.CommandText = "UPDATE tbl_usuarios SET nome = @nome, usuario = @usuario, senha = @senha where id = @id";
+
+                cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;//Parametro Que vem do compo p/ add BD
+                cn.Parameters.Add("usuario", SqlDbType.VarChar).Value = objTabela.Usuario;
+                cn.Parameters.Add("senha", SqlDbType.VarChar).Value = objTabela.Senha;
+                cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;
+
+                cn.Connection = con;//Associando SqlCommand a conexão
+
+                int qtd = cn.ExecuteNonQuery();//Executar os parametros e conferir quantidade cadastrada
+                //Console.Write(qtd);
+                return qtd;
+            }
+        }
+
+        public int Excluir(UsuarioEnt objTabela)
+        {
+            using (SqlConnection con = new SqlConnection())//Conexão 
+            {
+                //Associado ao BD
+                con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;//Comando SQL
+
+                con.Open();//Inicializar o conexão BD
+
+                //(comandos p/ inserir)       INSERIR DADOS tabela (valores campos) valores ()
+                cn.CommandText = "DELETE FROM tbl_usuarios where id = @id";
+
+                cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;//Parametro Que vem do compo p/ add BD
+
+                cn.Connection = con;//Associando SqlCommand a conexão
+
+                int qtd = cn.ExecuteNonQuery();//Executar os parametros e conferir quantidade cadastrada
+                //Console.Write(qtd);
+                return qtd;
+            }
+        }
+
         public UsuarioEnt Login(UsuarioEnt obj)
         {
             using (SqlConnection con = new SqlConnection())//Conexão 

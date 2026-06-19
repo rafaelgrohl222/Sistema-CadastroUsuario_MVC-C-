@@ -24,5 +24,15 @@ namespace Sistema.Model
         {
             return new UsuarioDAO().Login(obj);
         }
+
+        public static int Excluir(UsuarioEnt objTabela)
+        {
+            return new UsuarioDAO().Excluir(objTabela);
+        }
+
+        public static int Editar(UsuarioEnt objTabela)
+        {
+            return new UsuarioDAO().Editar(objTabela);
+        }
     }
 }

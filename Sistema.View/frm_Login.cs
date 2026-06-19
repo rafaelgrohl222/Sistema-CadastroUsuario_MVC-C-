@@ -59,5 +59,10 @@ namespace Sistema.View
             this.Hide();//Ocutar frm_Login
             form.Show();//Abrir form frm_CadUsuario
         }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            txtUsuario.Focus();
+        }
     }
 }
