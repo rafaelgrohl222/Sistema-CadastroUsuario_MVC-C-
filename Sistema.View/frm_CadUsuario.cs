@@ -110,6 +110,22 @@ namespace Sistema.View
                     }
                     break;
 
+                case "Buscar":
+                    try
+                    {
+                        objTabela.Nome = txt_Buscar.Text;
+                        //Objeto tipo List (Listar itens na gridView)
+                        List<UsuarioEnt> lista = new List<UsuarioEnt>();
+                        lista = new UsuarioModel().Buscar(objTabela);
+                        grid.AutoGenerateColumns = false;//Não gerar linhas automatizadas.
+                        grid.DataSource = lista;//DataSource rebe lista de dados
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao Listar Dados!" + ex.Message);
+                    }
+                    break;
+
                 default:
                     break;
             }
@@ -213,6 +229,29 @@ namespace Sistema.View
             txt_Usuario.Text = grid.CurrentRow.Cells[2].Value.ToString();
             txt_Senha.Text = grid.CurrentRow.Cells[3].Value.ToString();
             HabilitarCampos();
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            if (txt_Buscar.Text == "")
+            {
+                MessageBox.Show("Inserir Nome para Buscar!");
+                return;
+            }
+            opc = "Buscar";//Recebe o valor "Salvar"
+            iniciarOpc();
+            LimparCampos();
+        }
+
+        private void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_Buscar.Text == "")
+            {
+                ListarGrid();
+                return;
+            }
+            opc = "Buscar";
+            iniciarOpc();
         }
     }
 }

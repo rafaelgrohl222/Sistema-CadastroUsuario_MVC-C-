@@ -37,6 +37,48 @@ namespace Sistema.DAO
             }
         }
 
+        public List<UsuarioEnt> Buscar(UsuarioEnt objTabela)
+        {
+            using (SqlConnection con = new SqlConnection())//Conexão 
+            {
+                //Associado ao BD
+                con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;//Comando SQL
+
+                con.Open();//Inicializar o conexão BD
+
+                //(comandos p/ inserir)       SELECT DADOS tabela QUANDO nome aproximadamente para antes %@nome
+                cn.CommandText = "SELECT * from tbl_usuarios WHERE nome LIKE @nome";
+
+                cn.Parameters.Add("nome", SqlDbType.VarChar).Value = "%" + objTabela.Nome + "%";//Parametro Que vem do compo p/ add BD
+
+                cn.Connection = con;//Associando SqlCommand a conexão
+
+                SqlDataReader dr;//Realizar consultas
+                List<UsuarioEnt> lista = new List<UsuarioEnt>();
+
+                //verificar quantos linhas recebeu da lista
+                dr = cn.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    //Faça a leitura dentro do data Read, e mostrar
+                    while (dr.Read())
+                    {
+                        UsuarioEnt dado = new UsuarioEnt();
+                        dado.Id = Convert.ToInt32(dr["id"]);
+                        dado.Nome = Convert.ToString(dr["nome"]);
+                        dado.Usuario = Convert.ToString(dr["usuario"]);
+                        dado.Senha = Convert.ToString(dr["senha"]);
+
+                        lista.Add(dado);
+                    }
+                }
+                return lista;
+            }
+        }
+
         public int Editar(UsuarioEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())//Conexão 
@@ -170,7 +212,7 @@ namespace Sistema.DAO
                     }
                 }
                 return lista;
-            }//Parei na auta 26 0min
+            }
         }
     }
 }

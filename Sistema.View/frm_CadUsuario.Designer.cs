@@ -48,6 +48,9 @@ namespace Sistema.View
             this.btn_fechar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Codigo = new System.Windows.Forms.TextBox();
+            this.txt_Buscar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +59,7 @@ namespace Sistema.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 73);
+            this.label1.Location = new System.Drawing.Point(12, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 0;
@@ -66,7 +69,7 @@ namespace Sistema.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 108);
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 1;
@@ -76,7 +79,7 @@ namespace Sistema.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 141);
+            this.label3.Location = new System.Drawing.Point(12, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 2;
@@ -86,7 +89,7 @@ namespace Sistema.View
             // 
             this.txt_Nome.Enabled = false;
             this.txt_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Nome.Location = new System.Drawing.Point(112, 72);
+            this.txt_Nome.Location = new System.Drawing.Point(84, 72);
             this.txt_Nome.Name = "txt_Nome";
             this.txt_Nome.Size = new System.Drawing.Size(180, 22);
             this.txt_Nome.TabIndex = 3;
@@ -95,7 +98,7 @@ namespace Sistema.View
             // 
             this.txt_Usuario.Enabled = false;
             this.txt_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Usuario.Location = new System.Drawing.Point(112, 108);
+            this.txt_Usuario.Location = new System.Drawing.Point(84, 108);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(180, 22);
             this.txt_Usuario.TabIndex = 4;
@@ -104,7 +107,7 @@ namespace Sistema.View
             // 
             this.txt_Senha.Enabled = false;
             this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Senha.Location = new System.Drawing.Point(112, 141);
+            this.txt_Senha.Location = new System.Drawing.Point(84, 141);
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.Size = new System.Drawing.Size(180, 22);
             this.txt_Senha.TabIndex = 5;
@@ -206,9 +209,9 @@ namespace Sistema.View
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sistema.View.Properties.Resources.logim_imagem;
-            this.pictureBox1.Location = new System.Drawing.Point(312, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(288, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 145);
+            this.pictureBox1.Size = new System.Drawing.Size(287, 121);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -227,7 +230,7 @@ namespace Sistema.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 39);
+            this.label4.Location = new System.Drawing.Point(12, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 13;
@@ -237,16 +240,49 @@ namespace Sistema.View
             // 
             this.txt_Codigo.Enabled = false;
             this.txt_Codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Codigo.Location = new System.Drawing.Point(73, 39);
+            this.txt_Codigo.Location = new System.Drawing.Point(84, 18);
             this.txt_Codigo.Name = "txt_Codigo";
             this.txt_Codigo.Size = new System.Drawing.Size(66, 22);
             this.txt_Codigo.TabIndex = 14;
+            // 
+            // txt_Buscar
+            // 
+            this.txt_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Buscar.Location = new System.Drawing.Point(244, 18);
+            this.txt_Buscar.Name = "txt_Buscar";
+            this.txt_Buscar.Size = new System.Drawing.Size(239, 22);
+            this.txt_Buscar.TabIndex = 16;
+            this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(185, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 16);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Buscar:";
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Buscar.Location = new System.Drawing.Point(500, 17);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Buscar.TabIndex = 17;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // frm_CadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 394);
+            this.Controls.Add(this.btn_Buscar);
+            this.Controls.Add(this.txt_Buscar);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_Codigo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_fechar);
@@ -294,5 +330,8 @@ namespace Sistema.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Codigo;
+        private System.Windows.Forms.TextBox txt_Buscar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_Buscar;
     }
 }

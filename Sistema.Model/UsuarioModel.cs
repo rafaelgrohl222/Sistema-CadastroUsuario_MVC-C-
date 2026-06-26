@@ -34,5 +34,10 @@ namespace Sistema.Model
         {
             return new UsuarioDAO().Editar(objTabela);
         }
+
+        public List<UsuarioEnt> Buscar(UsuarioEnt objTabela)
+        {
+            return new UsuarioDAO().Buscar(objTabela);
+        }
     }
 }
