@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema.Entidades;
+using Sistema.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,21 +9,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Sistema.Model;
-using Sistema.Entidades;
 
 namespace Sistema.View
 {
-    public partial class frm_CadUsuario : Form
+    public partial class frm_CadProduto : Form
     {
-        UsuarioEnt objTabela = new UsuarioEnt();
-
-        public frm_CadUsuario()
+        public frm_CadProduto()
         {
             InitializeComponent();
         }
 
-        //Botão Novo
+        private void ListarGrid()
+        {
+            try
+            {
+                //Objeto tipo List (Listar itens na gridView)
+                List<ProdutoEnt> lista = new List<ProdutoEnt>();
+                lista = new ProdutoModel().Lista();
+                grid.AutoGenerateColumns = false;//Não gerar linhas automatizadas.
+                grid.DataSource = lista;//DataSource rebe lista de dados
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Listar Dados!" + ex.Message);
+            }
+        }
+
+        private void btn_Produtos_Click(object sender, EventArgs e)
+        {
+            frm_CadProduto form = new frm_CadProduto();
+            this.Hide();
+            form.Show();
+
+        }
+
+        private void frm_CadProduto_Load(object sender, EventArgs e)
+        {
+            ListarGrid();
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
         private void btn_Novo_Click(object sender, EventArgs e)
         {
             opc = "Novo";//Recebe o valor "Novo"
@@ -48,10 +80,10 @@ namespace Sistema.View
 
                         //Passando dados dos TexBox para o BD
                         int x = UsuarioModel.Inserir(objTabela);
-                        if(x > 0) 
+                        if (x > 0)
                         {
                             MessageBox.Show(string.Format("Usuário ({0}) Foi Inserido!", txt_Nome.Text));
-                        } 
+                        }
                         else
                         {
                             MessageBox.Show("Não Inserido!");
@@ -140,7 +172,7 @@ namespace Sistema.View
         }
 
         //Método Desabilitar Campo
-        private void DesabilitarCampo() 
+        private void DesabilitarCampo()
         {
             txt_Nome.Enabled = false;
             txt_Usuario.Enabled = false;
@@ -195,33 +227,6 @@ namespace Sistema.View
             LimparCampos();// Limpar Campo
         }
 
-        //Método: Listar GridView
-        private void ListarGrid()
-        {
-            try
-            {
-                //Objeto tipo List (Listar itens na gridView)
-                List<UsuarioEnt> lista = new List<UsuarioEnt>();
-                lista = new UsuarioModel().Lista();
-                grid.AutoGenerateColumns = false;//Não gerar linhas automatizadas.
-                grid.DataSource = lista;//DataSource rebe lista de dados
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao Listar Dados!" + ex.Message);
-            }
-        }
-
-        private void btn_fechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void frm_CadUsuario_Load(object sender, EventArgs e)
-        {
-            ListarGrid();
-        }
-
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_Codigo.Text = grid.CurrentRow.Cells[0].Value.ToString();
@@ -229,18 +234,6 @@ namespace Sistema.View
             txt_Usuario.Text = grid.CurrentRow.Cells[2].Value.ToString();
             txt_Senha.Text = grid.CurrentRow.Cells[3].Value.ToString();
             HabilitarCampos();
-        }
-
-        private void btn_Buscar_Click(object sender, EventArgs e)
-        {
-            if (txt_Buscar.Text == "")
-            {
-                MessageBox.Show("Inserir Nome para Buscar!");
-                return;
-            }
-            opc = "Buscar";//Recebe o valor "Salvar"
-            iniciarOpc();
-            LimparCampos();
         }
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
@@ -252,13 +245,6 @@ namespace Sistema.View
             }
             opc = "Buscar";
             iniciarOpc();
-        }
-
-        private void btn_Produtos_Click(object sender, EventArgs e)
-        {
-            frm_CadProduto form = new frm_CadProduto();
-            this.Hide();
-            form.Show();
         }
     }
 }

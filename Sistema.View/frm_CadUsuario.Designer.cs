@@ -51,6 +51,7 @@ namespace Sistema.View
             this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Buscar = new System.Windows.Forms.Button();
+            this.btn_Produtos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -209,9 +210,9 @@ namespace Sistema.View
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sistema.View.Properties.Resources.logim_imagem;
-            this.pictureBox1.Location = new System.Drawing.Point(288, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(288, 75);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(287, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(287, 90);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -275,11 +276,23 @@ namespace Sistema.View
             this.btn_Buscar.UseVisualStyleBackColor = true;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
+            // btn_Produtos
+            // 
+            this.btn_Produtos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Produtos.Location = new System.Drawing.Point(288, 46);
+            this.btn_Produtos.Name = "btn_Produtos";
+            this.btn_Produtos.Size = new System.Drawing.Size(287, 23);
+            this.btn_Produtos.TabIndex = 18;
+            this.btn_Produtos.Text = "Produtos";
+            this.btn_Produtos.UseVisualStyleBackColor = true;
+            this.btn_Produtos.Click += new System.EventHandler(this.btn_Produtos_Click);
+            // 
             // frm_CadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 394);
+            this.Controls.Add(this.btn_Produtos);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
             this.Controls.Add(this.label5);
@@ -333,5 +346,6 @@ namespace Sistema.View
         private System.Windows.Forms.TextBox txt_Buscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.Button btn_Produtos;
     }
 }
