@@ -49,6 +49,7 @@ namespace Sistema.View
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Usuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,11 +253,23 @@ namespace Sistema.View
             this.label1.TabIndex = 18;
             this.label1.Text = "Nome Produto:";
             // 
+            // btn_Usuario
+            // 
+            this.btn_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Usuario.Location = new System.Drawing.Point(314, 58);
+            this.btn_Usuario.Name = "btn_Usuario";
+            this.btn_Usuario.Size = new System.Drawing.Size(261, 23);
+            this.btn_Usuario.TabIndex = 35;
+            this.btn_Usuario.Text = "Usuário";
+            this.btn_Usuario.UseVisualStyleBackColor = true;
+            this.btn_Usuario.Click += new System.EventHandler(this.btn_Usuario_Click);
+            // 
             // frm_CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 380);
+            this.Controls.Add(this.btn_Usuario);
             this.Controls.Add(this.txt_Buscar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_Codigo);
@@ -304,5 +317,6 @@ namespace Sistema.View
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.Button btn_Usuario;
     }
 }

@@ -14,6 +14,8 @@ namespace Sistema.View
 {
     public partial class frm_CadProduto : Form
     {
+        ProdutoEnt objTabela = new ProdutoEnt();
+
         public frm_CadProduto()
         {
             InitializeComponent();
@@ -74,15 +76,15 @@ namespace Sistema.View
                 case "Salvar":
                     try
                     {
-                        objTabela.Nome = txt_Nome.Text;
-                        objTabela.Usuario = txt_Usuario.Text;
-                        objTabela.Senha = txt_Senha.Text;
+                        objTabela.NomeProduto = txt_NomeProduto.Text;
+                        objTabela.Descricao = txt_Descricao.Text;
+                        objTabela.Valor = Convert.ToDecimal(txt_Valor.Text);
 
                         //Passando dados dos TexBox para o BD
-                        int x = UsuarioModel.Inserir(objTabela);
+                        int x = ProdutoModel.Inserir(objTabela);
                         if (x > 0)
                         {
-                            MessageBox.Show(string.Format("Usuário ({0}) Foi Inserido!", txt_Nome.Text));
+                            MessageBox.Show(string.Format("Produto ({0}) Foi Inserido!", txt_NomeProduto.Text));
                         }
                         else
                         {
@@ -101,10 +103,10 @@ namespace Sistema.View
                         objTabela.Id = Convert.ToInt32(txt_Codigo.Text);
 
                         //Passando dados dos TexBox para o BD
-                        int x = UsuarioModel.Excluir(objTabela);
+                        int x = ProdutoModel.Excluir(objTabela);
                         if (x > 0)
                         {
-                            MessageBox.Show(string.Format("Usuário ({0}) Foi Excluido!", txt_Nome.Text));
+                            MessageBox.Show(string.Format("Produto ({0}) Foi Excluido!", txt_NomeProduto.Text));
                         }
                         else
                         {
@@ -121,15 +123,15 @@ namespace Sistema.View
                     try
                     {
                         objTabela.Id = Convert.ToInt32(txt_Codigo.Text);
-                        objTabela.Nome = txt_Nome.Text;
-                        objTabela.Usuario = txt_Usuario.Text;
-                        objTabela.Senha = txt_Senha.Text;
+                        objTabela.NomeProduto = txt_NomeProduto.Text;
+                        objTabela.Descricao = txt_Descricao.Text;
+                        objTabela.Valor = Convert.ToDecimal(txt_Valor.Text);
 
                         //Passando dados dos TexBox para o BD
-                        int x = UsuarioModel.Editar(objTabela);
+                        int x = ProdutoModel.Editar(objTabela);
                         if (x > 0)
                         {
-                            MessageBox.Show(string.Format("Usuário ({0}) Foi Editado!", txt_Nome.Text));
+                            MessageBox.Show(string.Format("Produto ({0}) Foi Editado!", txt_NomeProduto.Text));
                         }
                         else
                         {
@@ -143,20 +145,20 @@ namespace Sistema.View
                     break;
 
                 case "Buscar":
-                    try
-                    {
-                        objTabela.Nome = txt_Buscar.Text;
-                        //Objeto tipo List (Listar itens na gridView)
-                        List<UsuarioEnt> lista = new List<UsuarioEnt>();
-                        lista = new UsuarioModel().Buscar(objTabela);
-                        grid.AutoGenerateColumns = false;//Não gerar linhas automatizadas.
-                        grid.DataSource = lista;//DataSource rebe lista de dados
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao Listar Dados!" + ex.Message);
-                    }
-                    break;
+                        try
+                        {
+                            objTabela.NomeProduto = txt_Buscar.Text;
+                            //Objeto tipo List (Listar itens na gridView)
+                            List<ProdutoEnt> lista = new List<ProdutoEnt>();
+                            lista = new ProdutoModel().Buscar(objTabela);
+                            grid.AutoGenerateColumns = false;//Não gerar linhas automatizadas.
+                            grid.DataSource = lista;//DataSource rebe lista de dados
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao Listar Dados!" + ex.Message);
+                        }
+                        break;
 
                 default:
                     break;
@@ -166,26 +168,26 @@ namespace Sistema.View
         //Método: Habilitar Campos
         private void HabilitarCampos()
         {
-            txt_Nome.Enabled = true;
-            txt_Usuario.Enabled = true;
-            txt_Senha.Enabled = true;
+            txt_NomeProduto.Enabled = true;
+            txt_Descricao.Enabled = true;
+            txt_Valor.Enabled = true;
         }
 
         //Método Desabilitar Campo
         private void DesabilitarCampo()
         {
-            txt_Nome.Enabled = false;
-            txt_Usuario.Enabled = false;
-            txt_Senha.Enabled = false;
+            txt_NomeProduto.Enabled = false;
+            txt_Descricao.Enabled = false;
+            txt_Valor.Enabled = false;
         }
 
         //Método: Limpar Campos
         private void LimparCampos()
         {
             txt_Codigo.Text = "";
-            txt_Nome.Text = "";
-            txt_Usuario.Text = "";
-            txt_Senha.Text = "";
+            txt_NomeProduto.Text = "";
+            txt_Descricao.Text = "";
+            txt_Valor.Text = "";
         }
 
         private void btn_Salvar_Click(object sender, EventArgs e)
@@ -230,9 +232,9 @@ namespace Sistema.View
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_Codigo.Text = grid.CurrentRow.Cells[0].Value.ToString();
-            txt_Nome.Text = grid.CurrentRow.Cells[1].Value.ToString();
-            txt_Usuario.Text = grid.CurrentRow.Cells[2].Value.ToString();
-            txt_Senha.Text = grid.CurrentRow.Cells[3].Value.ToString();
+            txt_NomeProduto.Text = grid.CurrentRow.Cells[1].Value.ToString();
+            txt_Descricao.Text = grid.CurrentRow.Cells[2].Value.ToString();
+            txt_Valor.Text = grid.CurrentRow.Cells[3].Value.ToString();
             HabilitarCampos();
         }
 
@@ -245,6 +247,13 @@ namespace Sistema.View
             }
             opc = "Buscar";
             iniciarOpc();
+        }
+
+        private void btn_Usuario_Click(object sender, EventArgs e)
+        {
+            frm_CadUsuario form = new frm_CadUsuario();
+            this.Hide();
+            form.Show();
         }
     }
 }

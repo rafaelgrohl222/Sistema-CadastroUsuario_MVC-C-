@@ -21,6 +21,11 @@ namespace Sistema.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 if (txtUsuario.Text == "")
@@ -58,11 +63,6 @@ namespace Sistema.View
             frm_CadUsuario form = new frm_CadUsuario();
             this.Hide();//Ocutar frm_Login
             form.Show();//Abrir form frm_CadUsuario
-        }
-
-        private void frm_Login_Load(object sender, EventArgs e)
-        {
-            txtUsuario.Focus();
         }
     }
 }
