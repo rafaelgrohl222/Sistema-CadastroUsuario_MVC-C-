@@ -49,7 +49,7 @@ namespace Sistema.DAO
                 con.Open();//Inicializar o conexão BD
 
                 //(comandos p/ inserir)       SELECT DADOS tabela QUANDO nome aproximadamente para antes %@nome
-                cn.CommandText = "SELECT * from tbl_produtos WHERE nome LIKE @nomeProduto";
+                cn.CommandText = "SELECT * from tbl_produtos WHERE nomeProduto LIKE @nomeProduto";
 
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = "%" + objTabela.NomeProduto + "%";//Parametro Que vem do compo p/ add BD
 
