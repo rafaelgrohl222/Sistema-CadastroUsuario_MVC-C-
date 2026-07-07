@@ -192,6 +192,12 @@ namespace Sistema.View
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
+            if (txt_NomeProduto.Text == "" && txt_Descricao.Text == "" && txt_Valor.Text == "")
+            {
+                MessageBox.Show("Inserir dados nos canpos, para Salvar!");
+                return;
+            }
+
             opc = "Salvar";//Recebe o valor "Salvar"
             iniciarOpc();
             ListarGrid();//Atualizar a lista na gridView
