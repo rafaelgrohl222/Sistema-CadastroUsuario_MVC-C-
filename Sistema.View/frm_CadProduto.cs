@@ -231,10 +231,18 @@ namespace Sistema.View
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_Codigo.Text = grid.CurrentRow.Cells[0].Value.ToString();
-            txt_NomeProduto.Text = grid.CurrentRow.Cells[1].Value.ToString();
-            txt_Descricao.Text = grid.CurrentRow.Cells[2].Value.ToString();
-            txt_Valor.Text = grid.CurrentRow.Cells[3].Value.ToString();
+            if (e.RowIndex < 0)//Verificação valor menor que 0
+                return;
+
+            DataGridViewRow linha = grid.Rows[e.RowIndex];
+
+            if (linha.Cells[0].Value == null)//proteção extra contra valores nulos
+                return;
+
+            txt_Codigo.Text = grid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txt_NomeProduto.Text = grid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txt_Descricao.Text = grid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txt_Valor.Text = grid.Rows[e.RowIndex].Cells[3].Value.ToString();
             HabilitarCampos();
         }
 

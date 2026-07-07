@@ -95,7 +95,7 @@ namespace Sistema.DAO
 
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = objTabela.NomeProduto;//Parametro Que vem do compo p/ add BD
                 cn.Parameters.Add("descricao", SqlDbType.VarChar).Value = objTabela.Descricao;
-                cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
+                cn.Parameters.Add("valor", SqlDbType.Decimal).Value = objTabela.Valor;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;
 
                 cn.Connection = con;//Associando SqlCommand a conexão
