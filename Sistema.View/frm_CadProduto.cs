@@ -192,9 +192,19 @@ namespace Sistema.View
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            if (txt_NomeProduto.Text == "" && txt_Descricao.Text == "" && txt_Valor.Text == "")
+            if (txt_NomeProduto.Text == "")
             {
-                MessageBox.Show("Inserir dados nos canpos, para Salvar!");
+                MessageBox.Show("Inserir dados no campo vazio, para Salvar!");
+                return;
+            }
+            if (txt_Descricao.Text == "")
+            {
+                MessageBox.Show("Inserir dados no campo vazio, para Salvar!");
+                return;
+            }
+            if (txt_Valor.Text == "")
+            {
+                MessageBox.Show("Inserir dados no campo vazio, para Salvar!");
                 return;
             }
 
