@@ -284,5 +284,12 @@ namespace Sistema.View
             this.Hide();
             form.Show();
         }
+
+        private void btn_Categoria_Click(object sender, EventArgs e)
+        {
+            frm_CadCategoria form = new frm_CadCategoria();
+            this.Hide();
+            form.Show();
+        }
     }
 }

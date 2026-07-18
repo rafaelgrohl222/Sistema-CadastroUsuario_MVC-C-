@@ -18,3 +18,4 @@ D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\S
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.DAO.pdb
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\bin\Debug\Sistema.DAO.dll.config
 D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.frm_CadProduto.resources
+D:\CCharp_Projetos\Projeto-Novo_CadastroUsuario\Sistema\Sistema.View\obj\Debug\Sistema.View.frm_CadCategoria.resources

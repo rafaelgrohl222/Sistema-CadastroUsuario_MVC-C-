@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_CadCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CadCategoria.Designer.cs">
+      <DependentUpon>frm_CadCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_CadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_CadCategoria.resx">
+      <DependentUpon>frm_CadCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_CadProduto.resx">
       <DependentUpon>frm_CadProduto.cs</DependentUpon>
     </EmbeddedResource>

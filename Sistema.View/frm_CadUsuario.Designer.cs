@@ -52,6 +52,7 @@ namespace Sistema.View
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Produtos = new System.Windows.Forms.Button();
+            this.btn_Categoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -210,9 +211,9 @@ namespace Sistema.View
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sistema.View.Properties.Resources.logim_imagem;
-            this.pictureBox1.Location = new System.Drawing.Point(288, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(288, 110);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(287, 90);
+            this.pictureBox1.Size = new System.Drawing.Size(287, 55);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -287,11 +288,23 @@ namespace Sistema.View
             this.btn_Produtos.UseVisualStyleBackColor = true;
             this.btn_Produtos.Click += new System.EventHandler(this.btn_Produtos_Click);
             // 
+            // btn_Categoria
+            // 
+            this.btn_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Categoria.Location = new System.Drawing.Point(288, 75);
+            this.btn_Categoria.Name = "btn_Categoria";
+            this.btn_Categoria.Size = new System.Drawing.Size(287, 23);
+            this.btn_Categoria.TabIndex = 37;
+            this.btn_Categoria.Text = "Categoria";
+            this.btn_Categoria.UseVisualStyleBackColor = true;
+            this.btn_Categoria.Click += new System.EventHandler(this.btn_Categoria_Click);
+            // 
             // frm_CadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 394);
+            this.Controls.Add(this.btn_Categoria);
             this.Controls.Add(this.btn_Produtos);
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscar);
@@ -347,5 +360,6 @@ namespace Sistema.View
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Produtos;
+        private System.Windows.Forms.Button btn_Categoria;
     }
 }
