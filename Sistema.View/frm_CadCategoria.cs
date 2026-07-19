@@ -409,5 +409,34 @@ namespace Sistema.View
             // Posicionar o cursor no campo Nome da categoria
             btn_Novo.Focus();
         }
+
+        // Realiza a pesquisa dinâmica das categorias conforme o usuário digita.
+        private void txt_Pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Se o campo estiver vazio, exibe todos os registros
+                //Trim(): Remove todos os espaços em branco e caracteres
+                if (txt_Pesquisar.Text.Trim() == "")
+                {
+                    ListarGrid();
+                    return;
+                }
+                // Recebe o texto digitado
+                objTabela.NomeCategoria = txt_Pesquisar.Text.Trim();
+
+                // Pesquisa as categorias
+                List<CategoriaEnt> lista = new CategoriaModel().Buscar(objTabela);
+
+                // Configura a grid
+                grid_Categoria.AutoGenerateColumns = false;
+                grid_Categoria.DataSource = lista;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar categoria! " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

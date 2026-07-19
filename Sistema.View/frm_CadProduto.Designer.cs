@@ -51,6 +51,7 @@ namespace Sistema.View
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Usuario = new System.Windows.Forms.Button();
             this.btn_Categoria = new System.Windows.Forms.Button();
+            this.cbo_Categoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +118,7 @@ namespace Sistema.View
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(563, 169);
+            this.grid.Size = new System.Drawing.Size(563, 115);
             this.grid.TabIndex = 28;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
@@ -259,7 +260,7 @@ namespace Sistema.View
             this.btn_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Usuario.Location = new System.Drawing.Point(314, 58);
             this.btn_Usuario.Name = "btn_Usuario";
-            this.btn_Usuario.Size = new System.Drawing.Size(261, 23);
+            this.btn_Usuario.Size = new System.Drawing.Size(261, 22);
             this.btn_Usuario.TabIndex = 35;
             this.btn_Usuario.Text = "Usuário";
             this.btn_Usuario.UseVisualStyleBackColor = true;
@@ -267,7 +268,7 @@ namespace Sistema.View
             // 
             // btn_Categoria
             // 
-            this.btn_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Categoria.Location = new System.Drawing.Point(314, 92);
             this.btn_Categoria.Name = "btn_Categoria";
             this.btn_Categoria.Size = new System.Drawing.Size(261, 23);
@@ -276,11 +277,21 @@ namespace Sistema.View
             this.btn_Categoria.UseVisualStyleBackColor = true;
             this.btn_Categoria.Click += new System.EventHandler(this.btn_Categoria_Click);
             // 
+            // cbo_Categoria
+            // 
+            this.cbo_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_Categoria.FormattingEnabled = true;
+            this.cbo_Categoria.Location = new System.Drawing.Point(314, 126);
+            this.cbo_Categoria.Name = "cbo_Categoria";
+            this.cbo_Categoria.Size = new System.Drawing.Size(180, 23);
+            this.cbo_Categoria.TabIndex = 37;
+            // 
             // frm_CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 380);
+            this.Controls.Add(this.cbo_Categoria);
             this.Controls.Add(this.btn_Categoria);
             this.Controls.Add(this.btn_Usuario);
             this.Controls.Add(this.txt_Buscar);
@@ -332,5 +343,6 @@ namespace Sistema.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.Button btn_Usuario;
         private System.Windows.Forms.Button btn_Categoria;
+        private System.Windows.Forms.ComboBox cbo_Categoria;
     }
 }

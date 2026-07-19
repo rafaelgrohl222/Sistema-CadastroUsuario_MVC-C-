@@ -69,6 +69,7 @@ namespace Sistema.View
             this.txt_Pesquisar.Name = "txt_Pesquisar";
             this.txt_Pesquisar.Size = new System.Drawing.Size(331, 22);
             this.txt_Pesquisar.TabIndex = 51;
+            this.txt_Pesquisar.TextChanged += new System.EventHandler(this.txt_Pesquisar_TextChanged);
             // 
             // label5
             // 
