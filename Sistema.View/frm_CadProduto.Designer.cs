@@ -52,6 +52,7 @@ namespace Sistema.View
             this.btn_Usuario = new System.Windows.Forms.Button();
             this.btn_Categoria = new System.Windows.Forms.Button();
             this.cbo_Categoria = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,16 +282,27 @@ namespace Sistema.View
             // 
             this.cbo_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_Categoria.FormattingEnabled = true;
-            this.cbo_Categoria.Location = new System.Drawing.Point(314, 126);
+            this.cbo_Categoria.Location = new System.Drawing.Point(395, 126);
             this.cbo_Categoria.Name = "cbo_Categoria";
             this.cbo_Categoria.Size = new System.Drawing.Size(180, 23);
             this.cbo_Categoria.TabIndex = 37;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(311, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Selecionar:";
             // 
             // frm_CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 380);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbo_Categoria);
             this.Controls.Add(this.btn_Categoria);
             this.Controls.Add(this.btn_Usuario);
@@ -344,5 +356,6 @@ namespace Sistema.View
         private System.Windows.Forms.Button btn_Usuario;
         private System.Windows.Forms.Button btn_Categoria;
         private System.Windows.Forms.ComboBox cbo_Categoria;
+        private System.Windows.Forms.Label label6;
     }
 }

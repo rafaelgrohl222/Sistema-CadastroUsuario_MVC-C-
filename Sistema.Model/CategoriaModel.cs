@@ -10,6 +10,7 @@ namespace Sistema.Model
 {
     public class CategoriaModel
     {
+            // Model Categorias
             public static int Inserir(CategoriaEnt objTabela)
             {
                 return new CategoriaDao().Inserir(objTabela);

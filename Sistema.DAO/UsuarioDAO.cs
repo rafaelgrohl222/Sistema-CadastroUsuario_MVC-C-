@@ -199,7 +199,7 @@ namespace Sistema.DAO
 
                 if (dr.HasRows)
                 {
-                    //Faça a leitura dentro do data Read, e mostrar
+                    ///Faça a leitura dentro do data Read, e mostrar
                     while (dr.Read())
                     {
                         UsuarioEnt dado = new UsuarioEnt();

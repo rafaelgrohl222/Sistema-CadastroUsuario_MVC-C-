@@ -8,8 +8,9 @@ using Sistema.Entidades;
 
 namespace Sistema.Model
 {
-    public class UsuarioModel
-    {
+        //Model Usuário
+        public class UsuarioModel
+        {
         public static int Inserir(UsuarioEnt objTabela)
         {
             return new UsuarioDAO().Inserir(objTabela);

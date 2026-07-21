@@ -47,7 +47,11 @@ namespace Sistema.View
 
         private void frm_CadProduto_Load(object sender, EventArgs e)
         {
+            // Carrega os produtos
             ListarGrid();
+
+            // Carrega as categorias
+            CarregarCategoria();
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
@@ -79,6 +83,9 @@ namespace Sistema.View
                         objTabela.NomeProduto = txt_NomeProduto.Text;
                         objTabela.Descricao = txt_Descricao.Text;
                         objTabela.Valor = Convert.ToDecimal(txt_Valor.Text);
+
+                        // Recebe a categoria selecionada
+                        objTabela.IdCategoria = Convert.ToInt32(cbo_Categoria.SelectedValue);
 
                         //Passando dados dos TexBox para o BD
                         int x = ProdutoModel.Inserir(objTabela);
@@ -126,6 +133,9 @@ namespace Sistema.View
                         objTabela.NomeProduto = txt_NomeProduto.Text;
                         objTabela.Descricao = txt_Descricao.Text;
                         objTabela.Valor = Convert.ToDecimal(txt_Valor.Text);
+
+                        // Recebe a categoria selecionada
+                        objTabela.IdCategoria = Convert.ToInt32(cbo_Categoria.SelectedValue);
 
                         //Passando dados dos TexBox para o BD
                         int x = ProdutoModel.Editar(objTabela);
@@ -188,6 +198,7 @@ namespace Sistema.View
             txt_NomeProduto.Text = "";
             txt_Descricao.Text = "";
             txt_Valor.Text = "";
+            cbo_Categoria.Text = "";
         }
 
         private void btn_Salvar_Click(object sender, EventArgs e)
@@ -260,6 +271,35 @@ namespace Sistema.View
             txt_Descricao.Text = grid.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_Valor.Text = grid.Rows[e.RowIndex].Cells[3].Value.ToString();
             HabilitarCampos();
+        }
+
+        // Carrega as categorias cadastradas no ComboBox.
+        private void CarregarCategoria()
+        {
+            try
+            {
+                // Cria uma lista de categorias
+                List<CategoriaEnt> lista = new List<CategoriaEnt>();
+
+                // Carrega as categorias cadastradas
+                lista = new CategoriaModel().Lista();
+
+                // Configura o ComboBox
+                cbo_Categoria.DataSource = lista;
+
+                // Campo que será exibido
+                cbo_Categoria.DisplayMember = "NomeCategoria";
+
+                // Campo que será gravado
+                cbo_Categoria.ValueMember = "IdCategoria";
+
+                // Nenhuma categoria selecionada inicialmente
+                cbo_Categoria.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar categorias!" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)

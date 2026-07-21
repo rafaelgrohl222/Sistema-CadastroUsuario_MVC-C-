@@ -10,6 +10,7 @@ namespace Sistema.Model
 {
     public class ProdutoModel
     {
+        //Model Produtos
         public static int Inserir(ProdutoEnt objTabela)
         {
             return new ProdutoDao().Inserir(objTabela);

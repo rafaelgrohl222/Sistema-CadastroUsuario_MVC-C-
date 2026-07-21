@@ -78,7 +78,7 @@ namespace Sistema.DAO
             }
         }
 
-        //Método Editar
+        ///Método Editar
         public int Editar(CategoriaEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())

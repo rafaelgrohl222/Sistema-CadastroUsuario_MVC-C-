@@ -13,26 +13,32 @@ namespace Sistema.DAO
     {
         public int Inserir(ProdutoEnt objTabela)
         {
-            using (SqlConnection con = new SqlConnection())//Conexão 
+            using (SqlConnection con = new SqlConnection())///Conexão 
             {
-                //Associado ao BD
+                // Conexão com o banco de dados con = conexão
                 con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;//Comando SQL
 
-                con.Open();//Inicializar o conexão BD
+                // Abre a conexão
+                con.Open();
 
                 //(comandos p/ inserir)       INSERIR DADOS tabela (valores campos) valores ()
                 cn.CommandText = "INSERT INTO tbl_produtos ([nomeProduto], [descricao], [valor]) VALUES (@nomeProduto, @descricao, @valor)";
 
+                // Parâmetros
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = objTabela.NomeProduto;//Parametro Que vem do compo p/ add BD
                 cn.Parameters.Add("descricao", SqlDbType.VarChar).Value = objTabela.Descricao;
                 cn.Parameters.Add("valor", SqlDbType.Decimal).Value = objTabela.Valor;
+                cn.Parameters.Add("idCategoria", SqlDbType.Int).Value = objTabela.IdCategoria;
 
-                cn.Connection = con;//Associando SqlCommand a conexão
+                // Associa o comando à conexão
+                cn.Connection = con;
 
-                int qtd = cn.ExecuteNonQuery();//Executar os parametros e conferir quantidade cadastrada
-                //Console.Write(qtd);
+                // Executa o comando
+                int qtd = cn.ExecuteNonQuery();
+
                 return qtd;
             }
         }
@@ -96,6 +102,7 @@ namespace Sistema.DAO
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = objTabela.NomeProduto;//Parametro Que vem do compo p/ add BD
                 cn.Parameters.Add("descricao", SqlDbType.VarChar).Value = objTabela.Descricao;
                 cn.Parameters.Add("valor", SqlDbType.Decimal).Value = objTabela.Valor;
+                cn.Parameters.Add("idCategoria", SqlDbType.Int).Value = objTabela.IdCategoria;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;
 
                 cn.Connection = con;//Associando SqlCommand a conexão
@@ -130,26 +137,34 @@ namespace Sistema.DAO
             }
         }
 
+        // Lista todos os produtos com suas respectivas categorias.
         public List<ProdutoEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())//Conexão 
             {
-                //Associado ao BD
+                // Associado ao Banco de Dados
                 con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;//Comando SQL
 
-                con.Open();//Inicializar o conexão BD
+                // Abre a conexão
+                con.Open();
+
+                // Lista os produtos juntamente com o nome da categoria - Inner Join
+                cn.CommandText = "p.id, p.nomeProduto, p.descricao, p.valor, p.idCategoria, c.nomeCategoria FROM tbl_produtos p INNER JOIN tbl_categoria c ON p.idCategoria = c.idCategoria ORDER BY p.id DESC";
 
                 //(comandos p/ inserir)       INSERIR DADOS tabela (valores campos) valores ()
-                cn.CommandText = "SELECT * from tbl_produtos ORDER BY id DESC";
+                //cn.CommandText = "SELECT * from tbl_produtos ORDER BY id DESC";
 
-                cn.Connection = con;//Associando SqlCommand a conexão
+                // Associa o comando à conexão
+                cn.Connection = con;
 
                 SqlDataReader dr;//Realizar consultas
+
                 List<ProdutoEnt> lista = new List<ProdutoEnt>();
 
-                //verificar quantos linhas recebeu da lista
+                // Executa a consulta
                 dr = cn.ExecuteReader();
 
                 if (dr.HasRows)
@@ -158,10 +173,15 @@ namespace Sistema.DAO
                     while (dr.Read())
                     {
                         ProdutoEnt dado = new ProdutoEnt();
+
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.NomeProduto = Convert.ToString(dr["nomeProduto"]);
                         dado.Descricao = Convert.ToString(dr["descricao"]);
                         dado.Valor = Convert.ToDecimal(dr["valor"]);
+
+                        // Categoria
+                        dado.IdCategoria = Convert.ToInt32(dr["idCategoria"]);
+                        dado.NomeCategoria = Convert.ToString(dr["nomeCategoria"]);
 
                         lista.Add(dado);
                     }
