@@ -39,6 +39,8 @@ namespace Sistema.View
             this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_Excluir = new System.Windows.Forms.Button();
             this.btn_Salvar = new System.Windows.Forms.Button();
@@ -114,19 +116,21 @@ namespace Sistema.View
             this.id,
             this.NomeProduto,
             this.Descricao,
-            this.Valor});
+            this.Valor,
+            this.idCategoria,
+            this.nomeCategoria});
             this.grid.Location = new System.Drawing.Point(12, 201);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(563, 115);
+            this.grid.Size = new System.Drawing.Size(563, 167);
             this.grid.TabIndex = 28;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // id
             // 
             this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Código";
+            this.id.HeaderText = "Cod. Produto";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Width = 60;
@@ -134,7 +138,7 @@ namespace Sistema.View
             // NomeProduto
             // 
             this.NomeProduto.DataPropertyName = "NomeProduto";
-            this.NomeProduto.HeaderText = "Nome do Produto";
+            this.NomeProduto.HeaderText = "Produto";
             this.NomeProduto.Name = "NomeProduto";
             this.NomeProduto.ReadOnly = true;
             this.NomeProduto.Width = 180;
@@ -154,6 +158,21 @@ namespace Sistema.View
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             this.Valor.Width = 120;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "IdCategoria";
+            this.idCategoria.HeaderText = "Cod. Categoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Visible = false;
+            // 
+            // nomeCategoria
+            // 
+            this.nomeCategoria.DataPropertyName = "NomeCategoria";
+            this.nomeCategoria.HeaderText = "Categoria";
+            this.nomeCategoria.Name = "nomeCategoria";
+            this.nomeCategoria.ReadOnly = true;
             // 
             // btn_Editar
             // 
@@ -349,13 +368,15 @@ namespace Sistema.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.Button btn_Usuario;
         private System.Windows.Forms.Button btn_Categoria;
         private System.Windows.Forms.ComboBox cbo_Categoria;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCategoria;
     }
 }

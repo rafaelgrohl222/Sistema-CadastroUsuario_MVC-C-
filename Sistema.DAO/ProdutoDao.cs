@@ -152,7 +152,17 @@ namespace Sistema.DAO
                 con.Open();
 
                 // Lista os produtos juntamente com o nome da categoria - Inner Join
-                cn.CommandText = "p.id, p.nomeProduto, p.descricao, p.valor, p.idCategoria, c.nomeCategoria FROM tbl_produtos p INNER JOIN tbl_categoria c ON p.idCategoria = c.idCategoria ORDER BY p.id DESC";
+                cn.CommandText = @"SELECT
+                        p.id,
+                        p.nomeProduto,
+                        p.descricao,
+                        p.valor,
+                        p.idCategoria,
+                        c.nomeCategoria
+                   FROM tbl_produtos p
+                   LEFT JOIN tbl_categoria c
+                       ON p.idCategoria = c.idCategoria
+                   ORDER BY p.id DESC";
 
                 //(comandos p/ inserir)       INSERIR DADOS tabela (valores campos) valores ()
                 //cn.CommandText = "SELECT * from tbl_produtos ORDER BY id DESC";
@@ -179,10 +189,19 @@ namespace Sistema.DAO
                         dado.Descricao = Convert.ToString(dr["descricao"]);
                         dado.Valor = Convert.ToDecimal(dr["valor"]);
 
-                        // Categoria
-                        dado.IdCategoria = Convert.ToInt32(dr["idCategoria"]);
-                        dado.NomeCategoria = Convert.ToString(dr["nomeCategoria"]);
+                        // Código da categoria
+                        if (dr["idCategoria"] != DBNull.Value)
+                            dado.IdCategoria = Convert.ToInt32(dr["idCategoria"]);
+                        else
+                            dado.IdCategoria = 0;
 
+                        // Nome da categoria
+                        if (dr["nomeCategoria"] != DBNull.Value)
+                            dado.NomeCategoria = Convert.ToString(dr["nomeCategoria"]);
+                        else
+                            dado.NomeCategoria = "";
+
+                        // Adiciona o objeto na lista
                         lista.Add(dado);
                     }
                 }

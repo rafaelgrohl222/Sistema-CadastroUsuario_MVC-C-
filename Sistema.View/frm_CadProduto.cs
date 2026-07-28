@@ -258,18 +258,29 @@ namespace Sistema.View
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)//Verificação valor menor que 0
+            // Verifica se o clique foi realizado em uma linha válida
+            if (e.RowIndex < 0)
                 return;
 
             DataGridViewRow linha = grid.Rows[e.RowIndex];
 
-            if (linha.Cells[0].Value == null)//proteção extra contra valores nulos
+            // Verifica se a linha possui dados (proteção contra valores nulos)
+            if (linha.Cells[0].Value == null)
                 return;
 
             txt_Codigo.Text = grid.Rows[e.RowIndex].Cells[0].Value.ToString();
             txt_NomeProduto.Text = grid.Rows[e.RowIndex].Cells[1].Value.ToString();
             txt_Descricao.Text = grid.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_Valor.Text = grid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            HabilitarCampos();
+
+            // Seleciona automaticamente a categoria
+            if (linha.Cells["idCategoria"].Value != DBNull.Value)
+                cbo_Categoria.SelectedValue = Convert.ToInt32(linha.Cells["idCategoria"].Value);
+            else
+                cbo_Categoria.SelectedIndex = -1;
+
+            // Habilita os campos para edição
             HabilitarCampos();
         }
 
