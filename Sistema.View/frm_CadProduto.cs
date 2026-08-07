@@ -66,8 +66,10 @@ namespace Sistema.View
             iniciarOpc();
         }
 
-        //Método: Opções (Novo, Salvar, Excluir, Editar ou vazio)
+        // Opção da operação
         private string opc = "";
+
+        //Método: Opções (Novo, Salvar, Excluir, Editar ou vazio)
         private void iniciarOpc()
         {
             switch (opc)
@@ -170,7 +172,7 @@ namespace Sistema.View
                         }
                         break;
 
-                default:
+                    default:
                     break;
             }
         }
@@ -205,17 +207,26 @@ namespace Sistema.View
         {
             if (txt_NomeProduto.Text == "")
             {
-                MessageBox.Show("Inserir dados no campo vazio, para Salvar!");
+                MessageBox.Show("Inserir NOME no campo vazio, para Salvar!");
+                txt_NomeProduto.Focus();
                 return;
             }
             if (txt_Descricao.Text == "")
             {
-                MessageBox.Show("Inserir dados no campo vazio, para Salvar!");
+                MessageBox.Show("Inserir DESCRIÇÃO no campo vazio, para Salvar!");
+                txt_Descricao.Focus();
                 return;
             }
             if (txt_Valor.Text == "")
             {
-                MessageBox.Show("Inserir dados no campo vazio, para Salvar!");
+                MessageBox.Show("Inserir VALOR no campo vazio, para Salvar!");
+                txt_Valor.Focus();
+                return;
+            }
+            if (Convert.ToInt32(cbo_Categoria.SelectedValue) == 0)
+            {
+                MessageBox.Show("Selecionar a CATEGORIA para Salvar!");
+                cbo_Categoria.Focus();
                 return;
             }
 
@@ -230,7 +241,14 @@ namespace Sistema.View
         {
             if (txt_Codigo.Text == "")
             {
-                MessageBox.Show("Selecione um Registro na Grid, para Exclui!");
+                MessageBox.Show("Selecione um registro na Grid para excluir!", "Configuração", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult resposta = MessageBox.Show("Realmente deseja excluir este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resposta == DialogResult.No)
+            {
                 return;
             }
 
@@ -245,7 +263,14 @@ namespace Sistema.View
         {
             if (txt_Codigo.Text == "")
             {
-                MessageBox.Show("Selecione um Registro na Grid, para Editar!");
+                MessageBox.Show("Selecione um registro na Grid para editar!");
+                return;
+            }
+
+            DialogResult resposta = MessageBox.Show("Realmente deseja editar este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resposta == DialogResult.No)
+            {
                 return;
             }
 
@@ -290,10 +315,14 @@ namespace Sistema.View
             try
             {
                 // Cria uma lista de categorias
-                List<CategoriaEnt> lista = new List<CategoriaEnt>();
+                List<CategoriaEnt> lista = new CategoriaModel().Lista();
 
-                // Carrega as categorias cadastradas
-                lista = new CategoriaModel().Lista();
+                // Adiciona o item "Selecione..."
+                lista.Insert(0, new CategoriaEnt()
+                {
+                    IdCategoria = 0,
+                    NomeCategoria = "-- Selecione uma Categoria --"
+                });
 
                 // Configura o ComboBox
                 cbo_Categoria.DataSource = lista;
@@ -304,8 +333,8 @@ namespace Sistema.View
                 // Campo que será gravado
                 cbo_Categoria.ValueMember = "IdCategoria";
 
-                // Nenhuma categoria selecionada inicialmente
-                cbo_Categoria.SelectedIndex = -1;
+                // Seleciona o primeiro item
+                cbo_Categoria.SelectedIndex = 0;
             }
             catch (Exception ex)
             {

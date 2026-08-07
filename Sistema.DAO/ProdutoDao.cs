@@ -25,7 +25,7 @@ namespace Sistema.DAO
                 con.Open();
 
                 //(comandos p/ inserir)       INSERIR DADOS tabela (valores campos) valores ()
-                cn.CommandText = "INSERT INTO tbl_produtos ([nomeProduto], [descricao], [valor]) VALUES (@nomeProduto, @descricao, @valor)";
+                cn.CommandText = "INSERT INTO tbl_produtos ([nomeProduto], [descricao], [valor], [idCategoria]) VALUES (@nomeProduto, @descricao, @valor, @idCategoria)";
 
                 // Parâmetros
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = objTabela.NomeProduto;//Parametro Que vem do compo p/ add BD
@@ -97,7 +97,7 @@ namespace Sistema.DAO
                 con.Open();//Inicializar o conexão BD
 
                 //(comandos p/ inserir)       UPDATE tabela campos where receber 
-                cn.CommandText = "UPDATE tbl_produtos SET nomeProduto = @nomeProduto, descricao = @descricao, valor = @valor where id = @id";
+                cn.CommandText = "UPDATE tbl_produtos SET nomeProduto = @nomeProduto, descricao = @descricao, valor = @valor, idCategoria = @idCategoria where id = @id";
 
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = objTabela.NomeProduto;//Parametro Que vem do compo p/ add BD
                 cn.Parameters.Add("descricao", SqlDbType.VarChar).Value = objTabela.Descricao;

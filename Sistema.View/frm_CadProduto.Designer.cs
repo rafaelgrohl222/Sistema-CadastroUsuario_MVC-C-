@@ -54,7 +54,6 @@ namespace Sistema.View
             this.btn_Usuario = new System.Windows.Forms.Button();
             this.btn_Categoria = new System.Windows.Forms.Button();
             this.cbo_Categoria = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -222,7 +221,7 @@ namespace Sistema.View
             // 
             this.txt_Valor.Enabled = false;
             this.txt_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Valor.Location = new System.Drawing.Point(116, 126);
+            this.txt_Valor.Location = new System.Drawing.Point(116, 129);
             this.txt_Valor.Name = "txt_Valor";
             this.txt_Valor.Size = new System.Drawing.Size(180, 22);
             this.txt_Valor.TabIndex = 23;
@@ -240,7 +239,7 @@ namespace Sistema.View
             // 
             this.txt_NomeProduto.Enabled = false;
             this.txt_NomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NomeProduto.Location = new System.Drawing.Point(116, 58);
+            this.txt_NomeProduto.Location = new System.Drawing.Point(116, 54);
             this.txt_NomeProduto.Name = "txt_NomeProduto";
             this.txt_NomeProduto.Size = new System.Drawing.Size(180, 22);
             this.txt_NomeProduto.TabIndex = 21;
@@ -249,7 +248,7 @@ namespace Sistema.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 129);
+            this.label3.Location = new System.Drawing.Point(12, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 20;
@@ -269,7 +268,7 @@ namespace Sistema.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(12, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 16);
             this.label1.TabIndex = 18;
@@ -278,9 +277,9 @@ namespace Sistema.View
             // btn_Usuario
             // 
             this.btn_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Usuario.Location = new System.Drawing.Point(314, 58);
+            this.btn_Usuario.Location = new System.Drawing.Point(314, 54);
             this.btn_Usuario.Name = "btn_Usuario";
-            this.btn_Usuario.Size = new System.Drawing.Size(261, 22);
+            this.btn_Usuario.Size = new System.Drawing.Size(261, 27);
             this.btn_Usuario.TabIndex = 35;
             this.btn_Usuario.Text = "Usuário";
             this.btn_Usuario.UseVisualStyleBackColor = true;
@@ -288,10 +287,10 @@ namespace Sistema.View
             // 
             // btn_Categoria
             // 
-            this.btn_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Categoria.Location = new System.Drawing.Point(314, 92);
+            this.btn_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Categoria.Location = new System.Drawing.Point(314, 91);
             this.btn_Categoria.Name = "btn_Categoria";
-            this.btn_Categoria.Size = new System.Drawing.Size(261, 23);
+            this.btn_Categoria.Size = new System.Drawing.Size(261, 27);
             this.btn_Categoria.TabIndex = 36;
             this.btn_Categoria.Text = "Categoria";
             this.btn_Categoria.UseVisualStyleBackColor = true;
@@ -299,29 +298,19 @@ namespace Sistema.View
             // 
             // cbo_Categoria
             // 
+            this.cbo_Categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_Categoria.FormattingEnabled = true;
-            this.cbo_Categoria.Location = new System.Drawing.Point(395, 126);
+            this.cbo_Categoria.Location = new System.Drawing.Point(386, 129);
             this.cbo_Categoria.Name = "cbo_Categoria";
-            this.cbo_Categoria.Size = new System.Drawing.Size(180, 23);
+            this.cbo_Categoria.Size = new System.Drawing.Size(189, 23);
             this.cbo_Categoria.TabIndex = 37;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(311, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 16);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Selecionar:";
             // 
             // frm_CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 380);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbo_Categoria);
             this.Controls.Add(this.btn_Categoria);
             this.Controls.Add(this.btn_Usuario);
@@ -371,7 +360,6 @@ namespace Sistema.View
         private System.Windows.Forms.Button btn_Usuario;
         private System.Windows.Forms.Button btn_Categoria;
         private System.Windows.Forms.ComboBox cbo_Categoria;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
