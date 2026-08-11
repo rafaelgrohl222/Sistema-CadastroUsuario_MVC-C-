@@ -164,8 +164,8 @@ namespace Sistema.View
                             List<ProdutoEnt> lista = new List<ProdutoEnt>();
                             lista = new ProdutoModel().Buscar(objTabela);
                             grid.AutoGenerateColumns = false;//Não gerar linhas automatizadas.
-                            grid.DataSource = lista;//DataSource rebe lista de dados
-                        }
+                            grid.DataSource = lista;//conteúdo da lista passa para a Grid
+                    }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Erro ao Listar Dados!" + ex.Message);

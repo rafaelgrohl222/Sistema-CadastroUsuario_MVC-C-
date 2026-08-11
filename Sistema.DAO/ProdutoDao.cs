@@ -47,15 +47,32 @@ namespace Sistema.DAO
         {
             using (SqlConnection con = new SqlConnection())//Conexão 
             {
-                //Associado ao BD
+                // Conexão com o banco de dados
                 con.ConnectionString = "Data Source=DESKTOP-A0D6SHM\\RAFAEL;Initial Catalog=bancomvc;Integrated Security=True";
+
+                // Cria o comando SQL
                 SqlCommand cn = new SqlCommand();
+
+                // Define que o comando será um texto SQL
                 cn.CommandType = CommandType.Text;//Comando SQL
 
+                // Abre a conexão com o banco de dados
                 con.Open();//Inicializar o conexão BD
 
                 //(comandos p/ inserir)       SELECT DADOS tabela QUANDO nome aproximadamente para antes %@nome
-                cn.CommandText = "SELECT * from tbl_produtos WHERE nomeProduto LIKE @nomeProduto";
+                // Pesquisa o produto pelo nome e traz também a categoria
+                cn.CommandText = @"SELECT 
+                                        p.id,
+                                        p.nomeProduto,
+                                        p.descricao,
+                                        p.valor,
+                                        p.idCategoria,
+                                        c.nomeCategoria
+                                    FROM tbl_produtos p 
+                                    INNER JOIN tbl_categoria c
+                                    ON p.idCategoria = c.idCategoria
+                                    WHERE p.nomeProduto LIKE @nomeProduto
+                                    ORDER BY p.id DESC";
 
                 cn.Parameters.Add("nomeProduto", SqlDbType.VarChar).Value = "%" + objTabela.NomeProduto + "%";//Parametro Que vem do compo p/ add BD
 
