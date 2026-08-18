@@ -200,7 +200,9 @@ namespace Sistema.View
             txt_NomeProduto.Text = "";
             txt_Descricao.Text = "";
             txt_Valor.Text = "";
-            cbo_Categoria.Text = "";
+
+            // Volta o ComboBox para "Selecione uma Categoria"
+            cbo_Categoria.SelectedIndex = 0;
         }
 
         private void btn_Salvar_Click(object sender, EventArgs e)
